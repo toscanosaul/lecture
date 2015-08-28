@@ -1,0 +1,62 @@
+## Reading questions
+
+1.  A given program spends 10% of its time in an initial startup
+    phase, and then 90% of its time in work that can be easily
+    parallelized.  Assuming a machine with homogeneous cores, plot the
+    idealized speedup and parallel efficiency of the overall code
+    according to Amdahl's law for up to 128 cores.  If you know how,
+    you should use a script to produce this plot, with both the serial
+    fraction and the maximum number of cores as parameters.
+
+R: See the code plot.py and the pdf idealizedSpeedUp.pdf
+
+
+2.  Suppose a particular program can be partitioned into perfectly
+    independent tasks, each of which takes time tau.  Tasks are
+    set up, scheduled, and communicated to p workers at a (serial)
+    central server; this takes an overhead time alpha per task.
+    What is the theoretically achievable throughput (tasks/time)?
+
+R: The serial time  is alpha*tasks, and so the achievable output is:
+   tasks/alpha*tasks=1/alpha
+
+3.  Under what circumstances is it best to not tune?
+
+R: a) We want to save human time. We may want to do this if we are running our code only
+      a few number of times.
+   b) The part of the code is not a bottleneck.
+
+
+4.  The class cluster consists of eight nodes and fifteen Xeon Phi
+    accelerator boards.  Based on an online search for information on
+    these systems, what do you think is the theoretical peak flop rate
+    (double-precision floating point operations per second)?  Show how
+    you computed this, and give URLs for where you got the parameters
+    in your calculation.  (We will return to this question again after
+    we cover some computer architecture.)
+
+R: The computer has eight 12-core nodes [3], and the processor base frequency is 2.4 GHz [1]. Most microprocessors can do four FLOPs per Hz [2]. This is equal to (8)(12)(2.4)(4)=921.6 GigaFLOPs/s.
+
+Each Xeon Phi accelerator board has 60 cores, and the processor base frequency is 1.053 GHz [4]. This is equal
+to (15)(60)(1.053)(4)=3790.8 GigaFLOPs/s.
+
+Then, the theoretical peak flop rate is 3790.8 GigaFLOPs/s+921.6 GigaFLOPs/s=4172.4 GigaFLOPs/s.
+ 
+[1] http://ark.intel.com/products/83352/Intel-Xeon-Processor-E5-2620-v3-15M-Cache-2_40-GHz
+[2] http://en.community.dell.com/techcenter/high-performance-computing/w/wiki/2329
+[3] http://cornell-cs5220-f15.github.io/syllabus.html
+[4] http://ark.intel.com/products/71992/Intel-Xeon-Phi-Coprocessor-5110P-8GB-1_053-GHz-60-core
+    
+5.  What is the approximate theoretical peak flop rate for your own machine?
+
+R: My processor is 2.8 GHz dual-core Intel Core i5 and each core can serve 4 threads, so the theoretical peak flop rate of my machine is
+
+(2.8)(4)(2)(4)=89.6 GigaFLOPs/s 
+
+
+
+
+
+
+
+
