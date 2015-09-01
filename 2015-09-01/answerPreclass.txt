@@ -26,9 +26,9 @@ Then, the theoretical peak flop rate is 3790.8 GigaFLOPs/s+921.6 GigaFLOPs/s=417
     
 2.  What is the approximate theoretical peak flop rate for your own machine?
 
-R: My processor is 2.8 GHz dual-core Intel Core i5 and each core can serve 4 threads, so the theoretical peak flop rate of my machine is
+R: My processor is 2.8 GHz dual-core Intel Core i5, with Turbo Boost up to 3.3GHz, and each core can serve 4 threads, so the theoretical peak flop rate of my machine is
 
-(2.8)(4)(2)(4)=89.6 GigaFLOPs/s 
+(3.3)(4)(2)(4)=105.6 GigaFLOPs/s 
 
 3.  Suppose there are t tasks that can be executed in a pipeline
     with p stages.  What is the speedup over serial execution of the
