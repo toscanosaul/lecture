@@ -35,7 +35,7 @@ R: My processor is 2.8 GHz dual-core Intel Core i5 and each core can serve 4 thr
     same tasks?
 
 R: Suppose that each task takes time T. The serial execution is T*p*t.
-On the other hand, the parallel time is T*(p-1)+t*T, and so the speed up is
+On the other hand, the pipeline time is T*(p-1)+t*T, and so the speed up is
 
 p*t/(p-1+t)
 
