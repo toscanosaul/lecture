@@ -26,9 +26,9 @@ Then, the theoretical peak flop rate is 3790.8 GigaFLOPs/s+921.6 GigaFLOPs/s=417
     
 2.  What is the approximate theoretical peak flop rate for your own machine?
 
-R: My processor is 2.8 GHz dual-core Intel Core i5, with Turbo Boost up to 3.3GHz, and each core can serve 4 threads, so the theoretical peak flop rate of my machine is
+R: My processor is 2.8 GHz dual-core Intel Core i5 and each core can serve 4 threads, so the theoretical peak flop rate of my machine is
 
-(3.3)(4)(2)(4)=105.6 GigaFLOPs/s 
+(2.8)(4)(2)(4)=89.6 GigaFLOPs/s 
 
 3.  Suppose there are t tasks that can be executed in a pipeline
     with p stages.  What is the speedup over serial execution of the
@@ -67,6 +67,8 @@ R: The minimum serial time is 2.75 hr. The minimum parallel time is 2.25 hr.
     on your machine from the plot?
 
 R: 
+ Brings 64 bytes at a time
+line space
 
 6.  From the cloned repository, check out the totient branch:
 
@@ -96,3 +98,13 @@ R:
     compiler.  To do this, run "module load cs5220" and run (e.g.)
 
         icc -o centroid centroid.c
+
+R:
+
+Version 1: 1.020000e-02
+Version 2: 1.040000e-02
+Version 3: 7.600000e-03
+
+The version 3 is the fastest method. 
+
+
