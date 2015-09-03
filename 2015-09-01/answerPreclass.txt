@@ -66,9 +66,8 @@ R: The minimum serial time is 2.75 hr. The minimum parallel time is 2.25 hr.
     timings-heat.pdf; what can you tell about the cache architecture
     on your machine from the plot?
 
-R: 
- Brings 64 bytes at a time
-line space
+R: The cache memory brings 64 bytes at a time.
+
 
 6.  From the cloned repository, check out the totient branch:
 
