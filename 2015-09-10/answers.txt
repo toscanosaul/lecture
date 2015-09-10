@@ -2,6 +2,9 @@
    draw a roofline diagram for one totient node (assuming only the
    host cores are used, for the moment).  How do things change with
    the addition of the two Phi boards?
+R:
+The totient nodes are Intel Xeon E5-2520 v3 processors with 32 GB RAM per node.
+The bandwidth is 59 GB/sec and the peak flop rate is 120 GF/sec (preclass questions 2015-08-27)
 
 2. What is the difference between two cores and one core with
    hyperthreading?
