@@ -35,14 +35,14 @@ Specifically, we can can keep an entire row of A in the cache but we can't
 keep a full matrix, and so for every i, we perform (2N)(N) flops and we bring 
 (8N+8N*N) bytes into cache from memory. Since we repeat the exactly same process
 for every i, the AI is 2N*N/(8N+8N*N)=2N/(8+8N)=N/(4+4N)
-
+1/4
 3. Now suppose the cache is large enough to hold all of A, B, and C. What is the
 AI now? (Hint: Writing to a byte of memory not already in the cache incurs two
 memory transfers: one to move the data to the cache for writing, and one to move
 the written data back to main memory.)
 R: We can keep A,B,C in the cache, and so the AI is 
-(2N+1)*N*N/(16*N*N+16*N*N)=(2N+1)/32
-
+(2N+1)*N*N/(16*N*N)=(2N+1)/32
+N/8
 
 4. Cache overflowing. On my CPU (Intel i7-4700 HQ), L1, L2, and L3 caches are 32
 KB, 256 KB, and 6 MB respectively. What is the largest problem size N that will
