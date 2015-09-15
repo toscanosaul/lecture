@@ -4,15 +4,18 @@ If you run "make glider", you can see a small example of running
 the glider pattern for a few generations.
 
 0.  How much time did you spend on this pre-class exercise, and when?
-
+R: I spent 2 hours. I worked from 11:30pm Monday to 1:30am Tuesday
 1.  What are one or two points that you found least clear in the
     9/15 slide decks (including the narration)?
+R: Load balancing: imbalance from lack of parallelism
 
 2.  In the basic implementation provided, what size board for the Game
     of Life would fit in L3 cache for one of the totient nodes?  Add a
     timer to the code and run on the totient node.  How many cells per
     second can we update for a board that fits in L3 cache?  For a
     board that does not fit?
+R: i) The L3 cache size is 15MB. The size of one board is 2*(N^2)B, and so
+N<=sqrt(15MB/(2B))=2738. 
 
 3.  Assuming that we want to advance time by several generations,
     suggest a blocking strategy that would improve the operational
@@ -20,11 +23,16 @@ the glider pattern for a few generations.
     not dilute, so that we must still consider every cell.  You may
     want to try your hand at implementing your strategy (though you
     need not spend too much time on it).
+R: I would divide the board into P*P blocks where P*P is the number of processors
+   of the computer. Each processor would be in charge of one sub-block.
 
 4.  Comment on what would be required to parallelize this code
     according to the domain decomposition strategy outlined in the
     slides.  Do you think you would see good speedups on one of
     the totient nodes?  Why or why not?
+R: We would need to implement a communication strategy between the different sub-blocks.
+I think we would see good speedups because the stategy includes generation skipping, and so
+many of the operations are done in parallel.
 
 5.  Suppose we want to compute long-range interactions between two
     sets of particles in parallel using the obvious n^2 algorithm in a
@@ -49,3 +57,6 @@ the glider pattern for a few generations.
     Based on what you know about memories and parallel architecture,
     do you see any features of this approach that are likely to lead
     to poor performance?
+R: In this implementation, there is a lot of communication between all the processors.
+Moreover, at each step of the loop, we are updating the information of all the particles, 
+and so it is very likely that there will be a lot of miss caches.
