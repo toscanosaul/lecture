@@ -1,7 +1,8 @@
 0.  How much time did you spend on this pre-class exercise, and when?
-
+R: I spent on Monday.
 1.  What are one or two points that you found least clear in the
     9/22 slide decks (including the narration)?
+R: Monitors in Mechanisms for synchronization.
 
 2.  The pthread_mc.c file in the demo subdirectory runs a Monte Carlo
     simulation to estimate the expected value of a uniform random
@@ -13,15 +14,24 @@
        time per trial (t_trial), and time to update the global
        counters in the critical section (t_update).
 
-    b) Run the code with a few different parameter values in order
+      R: (N/p)*t_trial+t_update*(N/p*batch_size)
+  
+  b) Run the code with a few different parameter values in order
        to estimate N, t_trial, and t_update for this code on
        a totient compute node.
 
+     R:
+        5 threads (pthreads): 0.49989 (0.000288748): 4.858900e-02 s, 1000050 trials
+        1 threads (pthreads): 0.49983 (0.000288609): 1.365000e-02 s, 1000500 trials
+     
+    It seems that N is b*threads+1000000
+    
     c) Based on your model, suggest a strategy for choosing the batch
        size.  How might you generalize this strategy to automatically
        choose batch sizes for different types of computational
        experiments?
-    
+    R: It depends on the problem, because we need to choose the batch size such that
+       the program doesn't do extra work. 
 3.  In the workq subdirectory of this directory, there is a basic work
     queue implementation.  Following the strategy outlined in the
     slides, add synchronization calls in the locations marked TODO.
