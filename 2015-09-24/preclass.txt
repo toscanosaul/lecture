@@ -4,7 +4,7 @@
     9/24 slide decks (including the narration)?
 R: 1. I didn't understand the difference between single and master in other parallel work divisions.
     
-   2.Post-order traversal slide: where should we write #pragma omp parallel? I don't see how the threads
+   2.Post-order traversal slide: where should we write #pragma omp parallel? I don't understand how the threads
     will behave in this case.
 
 2.  The omp_mc.c file in the demo subdirectory runs a Monte Carlo
