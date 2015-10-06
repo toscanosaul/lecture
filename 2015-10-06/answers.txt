@@ -75,6 +75,6 @@ R: I couldn't get the results because the jobs are always in the Queue.
        flops/cycle), how many (double precision) floating point ops
        could two totient cores do in the minimal time required for one
        MPI message exchange?
-R: We can do (16)*(2.4e9) double precision flops/sec. According to the previous
+R: We can do (16)*(2.4e9)*12 double precision flops/sec. According to the previous
 answer, the minimal time required for one MPI message exchange is 3.07485e-07sec, and so
-two totient cores could do 11807.42 floating point ops. 
+two totient cores could do 141689.04 floating point ops. 
