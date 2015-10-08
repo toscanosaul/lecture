@@ -33,4 +33,18 @@ the interactions of the received data with its data and then send this data to t
        handled by a non-blocking send, so it is probably necessary
        to use three temporary buffers rather than the current two.
 
-R: 
+R: We can add a send_buf. First, we place the data in send_buf. Then in the for loop we do the following:
+
+MPI_Send(send_buf,...) 
+MPI_Recv(recv_buf,...)
+
+
+tmp=curr_buf
+curr_buf=recv_buf
+recv_buf=tmp
+
+/*compute interations on curr_buf
+
+tmp=curr_buf
+send_buf=tmp
+curr_buf=send_buf
