@@ -45,6 +45,3 @@ recv_buf=tmp
 
 /*compute interations on curr_buf
 
-tmp=curr_buf
-send_buf=tmp
-curr_buf=send_buf
